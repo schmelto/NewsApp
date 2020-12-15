@@ -16,7 +16,7 @@
 
   <div id="container">
 
-    <ion-card *ngFor="let article of data?.articles" (click)="onGoToNewsSinglePage(article)">
+    <ion-card *ngFor="let article of data?.articles">
       <ion-card-header>
           <ion-img *ngIf="article.urlToImage" [src]="article.urlToImage"></ion-img>
           <ion-card-subtitle>{{article['source'].name}}</ion-card-subtitle>
