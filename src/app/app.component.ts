@@ -13,21 +13,27 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
-      title: 'Top',
-      url: '/folder/top',
+      title: 'Top-Headlines',
+      url: '/folder/top-headlines',
       icon: 'bonfire'
     },
     {
-      title: 'New',
-      url: '/folder/new',
+      title: 'Everything',
+      url: '/folder/everything',
       icon: 'eye'
     },
   ];
 
+  countries = [
+    { id: 1, value: 'de', name: "DE" },
+    { id: 2, value: 'us', name: "US" },
+  ];
+  private selectedCountry: string = 'de';
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
   ) {
     this.initializeApp();
   }
@@ -45,4 +51,13 @@ export class AppComponent implements OnInit {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
   }
+
+  changeCountry(data) {
+    this.selectedCountry = data.detail.value;
+  }
+
+  getCountry() {
+    return this.selectedCountry;
+  }
+
 }

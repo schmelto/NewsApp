@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { exit } from 'process';
 const API_URL = environment.apiUrl;
 const API_KEY = environment.apiKey;
 
@@ -8,14 +9,11 @@ const API_KEY = environment.apiKey;
   providedIn: 'root'
 })
 export class NewsService {
-  currentArticle: any;
 
-  constructor(private http: HttpClient ) { }
+  constructor(private http: HttpClient) { }
 
-  // getData(url) {
-  //     return this.http.get(`${API_URL}/${url}&apiKey=${API_KEY}`);
-  // }
-  getData(){
-    return this.http.get(`https://newsapi.org/v2/everything?q=bitcoin&apiKey=44eb30e4688e4bee91c9c28e70279e36`);
+  getData(type, country, category, search) {
+    if (type == 'top-headlines') return this.http.get(`${API_URL}/${type}?country=${country}&category=${category}&apiKey=${API_KEY}`);
+    else return this.http.get(`${API_URL}/${type}?q=${search}&apiKey=${API_KEY}`);
   }
 }
