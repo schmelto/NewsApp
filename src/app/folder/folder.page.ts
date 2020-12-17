@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { NewsService } from '../services/news.service';
 import { AppComponent } from '../app.component';
+import { EventlistenerService } from '../services/eventlistener.service';
 
 @Component({
   selector: 'app-folder',
@@ -10,13 +12,25 @@ import { AppComponent } from '../app.component';
 })
 export class FolderPage implements OnInit {
 
+  clickEventsubscription:Subscription;
+
   public folder: string;
   data: any;
   public country: string = '';
   public category: string = '';
   public search: string = '';
 
-  constructor(private activatedRoute: ActivatedRoute, private newsService: NewsService, private app: AppComponent) { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private newsService: NewsService,
+    private app: AppComponent,
+    private EventlistenerService: EventlistenerService
+    ) {
+
+      this.clickEventsubscription = this.EventlistenerService.getClickEvent().subscribe(()=>{
+        this.ngOnInit();
+        });
+    }
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
@@ -28,7 +42,6 @@ export class FolderPage implements OnInit {
 
   checkCountry() {
     this.country = this.app.getCountry();
-    this.loadData();
   }
 
   checkCategory() {

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { EventlistenerService } from './services/eventlistener.service';
 
 @Component({
   selector: 'app-root',
@@ -28,12 +29,13 @@ export class AppComponent implements OnInit {
     { id: 1, value: 'de', name: "DE" },
     { id: 2, value: 'us', name: "US" },
   ];
-  private selectedCountry: string = 'de';
+  private selectedCountry: string = 'us';
 
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
+    private EventlistenerService: EventlistenerService
   ) {
     this.initializeApp();
   }
@@ -54,10 +56,16 @@ export class AppComponent implements OnInit {
 
   changeCountry(data) {
     this.selectedCountry = data.detail.value;
+    this.EventlistenerService.sendClickEvent();
+    // this.folder.loadData();
   }
 
   getCountry() {
     return this.selectedCountry;
   }
+
+  clickMe(){
+    this.EventlistenerService.sendClickEvent();
+    }
 
 }
