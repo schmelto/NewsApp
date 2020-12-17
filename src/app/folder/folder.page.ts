@@ -53,6 +53,7 @@ export class FolderPage implements OnInit {
   }
 
   loadData() {
+    if (this.search != '' || this.folder == 'top-headlines')
     this.newsService.getData(this.folder, this.country, this.category, this.search).subscribe(data => {
       this.data = data;
       console.log(data);

@@ -57,15 +57,10 @@ export class AppComponent implements OnInit {
   changeCountry(data) {
     this.selectedCountry = data.detail.value;
     this.EventlistenerService.sendClickEvent();
-    // this.folder.loadData();
   }
 
   getCountry() {
     return this.selectedCountry;
-  }
-
-  clickMe() {
-    this.EventlistenerService.sendClickEvent();
   }
 
 }
