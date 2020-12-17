@@ -64,8 +64,8 @@ export class AppComponent implements OnInit {
     return this.selectedCountry;
   }
 
-  clickMe(){
+  clickMe() {
     this.EventlistenerService.sendClickEvent();
-    }
+  }
 
 }

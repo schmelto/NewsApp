@@ -12,7 +12,7 @@ import { EventlistenerService } from '../services/eventlistener.service';
 })
 export class FolderPage implements OnInit {
 
-  clickEventsubscription:Subscription;
+  clickEventsubscription: Subscription;
 
   public folder: string;
   data: any;
@@ -25,12 +25,12 @@ export class FolderPage implements OnInit {
     private newsService: NewsService,
     private app: AppComponent,
     private EventlistenerService: EventlistenerService
-    ) {
+  ) {
 
-      this.clickEventsubscription = this.EventlistenerService.getClickEvent().subscribe(()=>{
-        this.ngOnInit();
-        });
-    }
+    this.clickEventsubscription = this.EventlistenerService.getClickEvent().subscribe(() => {
+      this.ngOnInit();
+    });
+  }
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
