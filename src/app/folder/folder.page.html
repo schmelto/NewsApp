@@ -18,7 +18,7 @@
 
     <ion-searchbar animated *ngIf="folder == 'everything'" [(ngModel)]="search" (ionChange)="ngOnInit()">
     </ion-searchbar>
-    <div id="warning" *ngIf="search == '' && folder == 'everything'">Please search the news to get results!</div>
+    <div id="warning" *ngIf="search == '' && folder == 'everything' && data == ''">Please search the news to get results!</div>
     <ion-card *ngFor="let article of data?.articles">
       <ion-card-header>
         <ion-img *ngIf="article.urlToImage" [src]="article.urlToImage"></ion-img>
