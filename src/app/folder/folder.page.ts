@@ -36,7 +36,6 @@ export class FolderPage implements OnInit {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
     this.checkCountry();
     this.checkCategory();
-    this.checkSearch();
     this.loadData();
   }
 
@@ -45,10 +44,6 @@ export class FolderPage implements OnInit {
   }
 
   checkCategory() {
-
-  }
-
-  checkSearch() {
 
   }
 
