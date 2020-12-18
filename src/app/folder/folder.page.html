@@ -16,9 +16,16 @@
 
   <div id="container">
 
+    <!-- Refresh -->
+    <ion-refresher slot="fixed" id="refresher" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
     <ion-searchbar animated *ngIf="folder == 'everything'" [(ngModel)]="search" (ionChange)="ngOnInit()">
     </ion-searchbar>
-    <div id="warning" *ngIf="search == '' && folder == 'everything' && data == ''">Please search the news to get results!</div>
+    <div id="warning" *ngIf="search == '' && folder == 'everything' && data == ''">Please search the news to get
+      results!</div>
+
     <ion-card *ngFor="let article of data?.articles">
       <ion-card-header>
         <ion-img *ngIf="article.urlToImage" [src]="article.urlToImage"></ion-img>
@@ -26,6 +33,13 @@
         <ion-card-title>{{article.title}}</ion-card-title>
       </ion-card-header>
     </ion-card>
+
+    <!-- Load more Data -->
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="moreData($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles"
+                                   loadingText="Loading more data...">
+      </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 
   </div>
 </ion-content>

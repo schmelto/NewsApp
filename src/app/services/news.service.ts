@@ -12,8 +12,9 @@ export class NewsService {
 
   constructor(private http: HttpClient) { }
 
-  getData(type, country, category, search) {
-    if (type == 'top-headlines') return this.http.get(`${API_URL}/${type}?country=${country}&category=${category}&apiKey=${API_KEY}`);
-    else return this.http.get(`${API_URL}/${type}?q=${search}&apiKey=${API_KEY}`);
+  getData(type, country, category, search, page) {
+    console.log(`${API_URL}/${type}?pageSize=5&page=${page}&country=${country}&category=${category}&apiKey=${API_KEY}`);
+    if (type == 'top-headlines') return this.http.get(`${API_URL}/${type}?pageSize=5&page=${page}&country=${country}&category=${category}&apiKey=${API_KEY}`);
+    else return this.http.get(`${API_URL}/${type}?pageSize=5&q=${search}&apiKey=${API_KEY}`);
   }
 }
