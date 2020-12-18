@@ -80,12 +80,6 @@ export class FolderPage implements OnInit {
       event.target.complete();
       // App logic to determine if all data is loaded
       // and disable the infinite scroll
-      //console.log(this.data.articles.length);
-      //console.log(this.data.totalResults);
-      //if (this.data.articles.length == this.data.totalResults) {
-      //    // event.target.disabled = true;
-      //    console.log('test');
-      //}
     }, 500);
   }
 
