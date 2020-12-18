@@ -18,10 +18,11 @@ export class FolderPage implements OnInit {
 
   public folder: string;
   data: any;
+  page = 1;
   public country: string = '';
   public category: string = '';
   public search: string = '';
-  page = 1;
+  public showInfiniteScroll: boolean = true;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -54,8 +55,9 @@ export class FolderPage implements OnInit {
     if (this.search != '' || this.folder == 'top-headlines') {
       this.newsService.getData(this.folder, this.country, this.category, this.search, this.page).subscribe(data => {
         // initial load of the data
-        if (this.page == 1) { 
+        if (this.page == 1) {
           this.data = data;
+          console.log(data);
         }
         // append next articles to the data array
         else {
@@ -64,9 +66,9 @@ export class FolderPage implements OnInit {
           for (let i = 0; i < data['articles'].length; i++) {
             this.data.articles.push(arr[i]);
           }
+          this.checkIfAllArtriclesAreLoaded();
         }
       });
-
     }
   }
 
@@ -92,6 +94,10 @@ export class FolderPage implements OnInit {
     setTimeout(() => {
       event.target.complete();
     });
+  }
+
+  checkIfAllArtriclesAreLoaded(){
+    if(this.data['articles'].length >= this.data.totalResults) this.showInfiniteScroll = false;
   }
 
 }

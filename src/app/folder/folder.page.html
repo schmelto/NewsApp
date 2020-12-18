@@ -35,11 +35,13 @@
     </ion-card>
 
     <!-- Load more Data -->
+    <div *ngIf=showInfiniteScroll>
     <ion-infinite-scroll threshold="100px" (ionInfinite)="moreData($event)">
       <ion-infinite-scroll-content loadingSpinner="bubbles"
                                    loadingText="Loading more data...">
       </ion-infinite-scroll-content>
   </ion-infinite-scroll>
+</div>
 
   </div>
 </ion-content>
