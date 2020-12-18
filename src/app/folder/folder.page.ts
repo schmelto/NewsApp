@@ -90,10 +90,21 @@ export class FolderPage implements OnInit {
   }
 
   doRefresh(event) {
+    this.resetParameters();
     this.ngOnInit();
+
     setTimeout(() => {
       event.target.complete();
     });
+  }
+
+  resetParameters() {
+    this.data = null;
+    this.page = 1;
+    this.country = '';
+    this.category = '';
+    this.search = '';
+    this.showInfiniteScroll = true;
   }
 
   checkIfAllArtriclesAreLoaded(){
