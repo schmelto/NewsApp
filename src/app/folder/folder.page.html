@@ -23,10 +23,10 @@
 
     <ion-searchbar animated *ngIf="folder == 'everything'" [(ngModel)]="search" (ionChange)="ngOnInit()">
     </ion-searchbar>
-    <div id="warning" *ngIf="search == '' && folder == 'everything' && data == ''">Please search the news to get
+    <div id="warning" *ngIf="search == '' && folder == 'everything'">Please search the news to get
       results!</div>
 
-    <ion-card *ngFor="let article of data?.articles">
+    <ion-card (click)="presentModal(article)" *ngFor="let article of data?.articles">
       <ion-card-header>
         <ion-img *ngIf="article.urlToImage" [src]="article.urlToImage"></ion-img>
         <ion-card-subtitle>{{article['source'].name}}</ion-card-subtitle>
@@ -36,12 +36,11 @@
 
     <!-- Load more Data -->
     <div *ngIf=showInfiniteScroll>
-    <ion-infinite-scroll threshold="100px" (ionInfinite)="moreData($event)">
-      <ion-infinite-scroll-content loadingSpinner="bubbles"
-                                   loadingText="Loading more data...">
-      </ion-infinite-scroll-content>
-  </ion-infinite-scroll>
-</div>
+      <ion-infinite-scroll threshold="100px" (ionInfinite)="moreData($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </div>
 
   </div>
 </ion-content>
