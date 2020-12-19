@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { IonInfiniteScroll } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
+import { ArticlePage } from '../article/article.page';
 import { NewsService } from '../services/news.service';
 import { AppComponent } from '../app.component';
 import { EventlistenerService } from '../services/eventlistener.service';
@@ -28,7 +30,8 @@ export class FolderPage implements OnInit {
     private activatedRoute: ActivatedRoute,
     private newsService: NewsService,
     private app: AppComponent,
-    private EventlistenerService: EventlistenerService
+    private EventlistenerService: EventlistenerService,
+    public modalController: ModalController
   ) {
 
     this.clickEventsubscription = this.EventlistenerService.getClickEvent().subscribe(() => {
@@ -104,5 +107,15 @@ export class FolderPage implements OnInit {
   checkIfAllArtriclesAreLoaded(){
     if(this.data['articles'].length >= this.data.totalResults) this.showInfiniteScroll = false;
   }
+
+  async presentModal(article) {
+    this.newsService.currentArticle = article;
+    const modal = await this.modalController.create({
+      component: ArticlePage,
+      cssClass: 'my-custom-class'
+    });
+    return await modal.present();
+  }
+  
 
 }

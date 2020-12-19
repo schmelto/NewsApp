@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-button color="dark" (click)="closeModal()">
+              <ion-icon name="arrow-back"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+      <ion-title>{{article['source'].name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+      <ion-card-header>
+          <ion-img *ngIf="article.urlToImage" [src]="article.urlToImage"></ion-img>
+          <ion-card-title>{{article.title}}</ion-card-title>
+          <ion-card-subtitle>{{article.author}}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+          {{article.description}}
+          <br /><br />
+                <a [href]="article.url">Read More...</a>
+          <br /><br />
+          Published: {{article.publishedAt}}
+
+      </ion-card-content>
+
+  </ion-card>
+</ion-content>
