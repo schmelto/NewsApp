@@ -88,7 +88,7 @@ export class FolderPage implements OnInit {
 
   doRefresh(event) {
     this.resetParameters();
-    this.ngOnInit();
+    this.loadData();
 
     setTimeout(() => {
       event.target.complete();
@@ -104,8 +104,8 @@ export class FolderPage implements OnInit {
     this.showInfiniteScroll = true;
   }
 
-  checkIfAllArtriclesAreLoaded(){
-    if(this.data['articles'].length >= this.data.totalResults) this.showInfiniteScroll = false;
+  checkIfAllArtriclesAreLoaded() {
+    if (this.data['articles'].length >= this.data.totalResults) this.showInfiniteScroll = false;
   }
 
   async presentModal(article) {
@@ -116,6 +116,6 @@ export class FolderPage implements OnInit {
     });
     return await modal.present();
   }
-  
+
 
 }
