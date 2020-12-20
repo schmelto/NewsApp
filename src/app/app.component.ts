@@ -25,11 +25,21 @@ export class AppComponent implements OnInit {
     },
   ];
 
+  private selectedCountry: string = 'us';
+  private selectedCategory: string = 'general';
   countries = [
     { id: 1, value: 'de', name: "DE" },
     { id: 2, value: 'us', name: "US" },
   ];
-  private selectedCountry: string = 'us';
+  categories = [
+    { id: 1, value: 'business', name: "Business" },
+    { id: 2, value: 'entertainment', name: "Entertainment" },
+    { id: 3, value: 'general', name: "General" },
+    { id: 4, value: 'health', name: "Health" },
+    { id: 5, value: 'science', name: "Science" },
+    { id: 6, value: 'sports', name: "Sports" },
+    { id: 7, value: 'technology', name: "Technology" }
+  ];
 
   constructor(
     private platform: Platform,
@@ -61,6 +71,15 @@ export class AppComponent implements OnInit {
 
   getCountry() {
     return this.selectedCountry;
+  }
+
+  changeCategory(data) {
+    this.selectedCategory = data.detail.value;
+    console.log(data.detail.value);
+    this.EventlistenerService.sendClickEvent();
+  }
+  getCategory() {
+    return this.selectedCategory;
   }
 
 }
