@@ -13,8 +13,8 @@
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
-
-        <ion-list>
+        <!-- Top-Headlines -->
+        <ion-list *ngIf="selectedIndex === 0">
           <ion-item>
             <ion-label>Country</ion-label>
             <ion-select [value]="selectedCountry" [interfaceOptions]="customPopoverOptions" interface="popover"
