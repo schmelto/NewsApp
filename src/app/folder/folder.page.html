@@ -4,6 +4,7 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>{{ folder }}</ion-title>
+    <ion-badge slot="end" style="margin-right: 1rem">{{data?.totalResults}}</ion-badge>
   </ion-toolbar>
 </ion-header>
 
@@ -23,7 +24,7 @@
 
     <ion-searchbar animated *ngIf="folder == 'everything'" [(ngModel)]="search" (ionChange)="ngOnInit()">
     </ion-searchbar>
-    <div id="warning" *ngIf="search == '' && folder == 'everything' && data == ''">Please search the news to get
+    <div id="warning" *ngIf="folder == 'everything' && search == ''">Please search the news to get
       results!</div>
 
     <ion-card (click)="presentModal(article)" *ngFor="let article of data?.articles">

@@ -13,8 +13,8 @@
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
-
-        <ion-list>
+        <!-- Top-Headlines -->
+        <ion-list *ngIf="selectedIndex === 0">
           <ion-item>
             <ion-label>Country</ion-label>
             <ion-select [value]="selectedCountry" [interfaceOptions]="customPopoverOptions" interface="popover"
@@ -28,6 +28,36 @@
             <ion-select [value]="selectedCategory" [interfaceOptions]="customPopoverOptions" interface="popover"
               (ionChange)="changeCategory($event)">
               <ion-select-option [value]="category.value" *ngFor="let category of categories">{{category.name}}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+
+        <!-- Everything -->
+        <ion-list *ngIf="selectedIndex === 1">
+          <ion-item>
+            <ion-label>Language</ion-label>
+            <ion-select [value]="selectedLanguage" [interfaceOptions]="customPopoverOptions" interface="popover"
+              (ionChange)="changeLanguage($event)">
+              <ion-select-option [value]="language.value" *ngFor="let language of languages">{{language.name}}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label>From</ion-label>
+            <ion-datetime displayFormat="YYYY-MM-DD" [value]="selectedFrom" (ionChange)="changeFrom($event)">
+            </ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-label>To</ion-label>
+            <ion-datetime displayFormat="YYYY-MM-DD" [value]="selectedTo" (ionChange)="changeTo($event)">
+            </ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-label>Sort By</ion-label>
+            <ion-select [value]="selectedSortBy" [interfaceOptions]="customPopoverOptions" interface="popover"
+              (ionChange)="changeSortBy($event)">
+              <ion-select-option [value]="sort.value" *ngFor="let sort of sortBy">{{sort.name}}
               </ion-select-option>
             </ion-select>
           </ion-item>

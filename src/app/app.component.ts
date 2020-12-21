@@ -4,6 +4,8 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { EventlistenerService } from './services/eventlistener.service';
+import { ConsoleReporter } from 'jasmine';
+import { getDefaultSettings } from 'http2';
 
 @Component({
   selector: 'app-root',
@@ -27,9 +29,14 @@ export class AppComponent implements OnInit {
 
   private selectedCountry: string = 'us';
   private selectedCategory: string = 'general';
+  private selectedLanguage: string = 'en';
+  private selectedSortBy: string = 'publishedAt';
+  private selectedFrom: string;
+  private selectedTo: string;
+
   countries = [
-    { id: 1, value: 'de', name: "DE" },
-    { id: 2, value: 'us', name: "US" },
+    { id: 1, value: 'de', name: "Germany" },
+    { id: 2, value: 'us', name: "United States" },
   ];
   categories = [
     { id: 1, value: 'business', name: "Business" },
@@ -39,6 +46,15 @@ export class AppComponent implements OnInit {
     { id: 5, value: 'science', name: "Science" },
     { id: 6, value: 'sports', name: "Sports" },
     { id: 7, value: 'technology', name: "Technology" }
+  ];
+  languages = [
+    { id: 1, value: 'de', name: "German" },
+    { id: 2, value: 'en', name: "English" },
+  ];
+  sortBy = [
+    { id: 1, value: 'publishedAt', name: "Published At" },
+    { id: 2, value: 'relevancy', name: "Relevancy" },
+    { id: 3, value: 'popularity', name: "Popularity" },
   ];
 
   constructor(
@@ -62,6 +78,24 @@ export class AppComponent implements OnInit {
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
+    this.getDates();
+  }
+
+  getDates() {
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yyyy = today.getFullYear();
+
+    this.selectedFrom = yyyy + '-' + mm + '-' + dd;
+
+    let oneWeekAgo = new Date();
+    oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+    dd = String(oneWeekAgo.getDate()).padStart(2, '0');
+    mm = String(oneWeekAgo.getMonth() + 1).padStart(2, '0'); //January is 0!
+    yyyy = oneWeekAgo.getFullYear();
+
+    this.selectedTo = yyyy + '-' + mm + '-' + dd;
   }
 
   changeCountry(data) {
@@ -80,6 +114,42 @@ export class AppComponent implements OnInit {
   }
   getCategory() {
     return this.selectedCategory;
+  }
+
+  changeSortBy(data) {
+    this.selectedCountry = data.detail.value;
+    this.EventlistenerService.sendClickEvent();
+  }
+
+  getSortBy() {
+    return this.selectedSortBy;
+  }
+
+  changeLanguage(data) {
+    this.selectedLanguage = data.detail.value;
+    this.EventlistenerService.sendClickEvent();
+  }
+
+  getLanguage() {
+    return this.selectedLanguage;
+  }
+
+  changeFrom(data) {
+    this.selectedFrom = data.detail.value;
+    this.EventlistenerService.sendClickEvent();
+  }
+
+  getFrom() {
+    return this.selectedFrom;
+  }
+
+  changeTo(data) {
+    this.selectedTo = data.detail.value;
+    this.EventlistenerService.sendClickEvent();
+  }
+
+  getTo() {
+    return this.selectedTo;
   }
 
 }

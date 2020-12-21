@@ -18,13 +18,17 @@ export class FolderPage implements OnInit {
 
   clickEventsubscription: Subscription;
 
-  public folder: string;
+  private folder: string;
   data: any;
   page = 1;
-  public country: string = '';
-  public category: string = '';
-  public search: string = '';
+  private country: string = '';
+  private category: string = '';
+  private search: string = '';
   public showInfiniteScroll: boolean = true;
+  private language: string;
+  private from: string;
+  private to: string;
+  private sortBy: string;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -43,6 +47,7 @@ export class FolderPage implements OnInit {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
     this.checkCountry();
     this.checkCategory();
+    this.checkSelectionInEverything();
     this.loadData();
   }
 
@@ -54,9 +59,16 @@ export class FolderPage implements OnInit {
     this.category = this.app.getCategory();
   }
 
+  checkSelectionInEverything() {
+    this.language = this.app.getLanguage();
+    this.from = this.app.getFrom();
+    this.to = this.app.getTo();
+    this.sortBy = this.app.getSortBy();
+  }
+
   loadData() {
     if (this.search != '' || this.folder == 'top-headlines') {
-      this.newsService.getData(this.folder, this.country, this.category, this.search, this.page).subscribe(data => {
+      this.newsService.getData(this.folder, this.country, this.category, this.search, this.page, this.language, this.from, this.to, this.sortBy).subscribe(data => {
         // initial load of the data
         if (this.page == 1) {
           this.data = data;
