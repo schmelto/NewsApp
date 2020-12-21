@@ -4,8 +4,6 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { EventlistenerService } from './services/eventlistener.service';
-import { ConsoleReporter } from 'jasmine';
-import { getDefaultSettings } from 'http2';
 
 @Component({
   selector: 'app-root',
