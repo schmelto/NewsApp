@@ -51,7 +51,7 @@ export class FolderPage implements OnInit {
   }
 
   checkCategory() {
-
+    this.category = this.app.getCategory();
   }
 
   loadData() {
