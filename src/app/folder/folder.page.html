@@ -22,7 +22,7 @@
       <ion-refresher-content></ion-refresher-content>
     </ion-refresher>
 
-    <ion-searchbar animated *ngIf="folder == 'everything'" [(ngModel)]="search" (ionChange)="ngOnInit()">
+    <ion-searchbar animated *ngIf="folder == 'everything'" [(ngModel)]="search" (search)="ngOnInit()">
     </ion-searchbar>
     <div id="warning" *ngIf="folder == 'everything' && search == ''">Please search the news to get
       results!</div>
