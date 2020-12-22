@@ -25,12 +25,12 @@ export class AppComponent implements OnInit {
     },
   ];
 
-  private selectedCountry: string = 'us';
-  private selectedCategory: string = 'general';
-  private selectedLanguage: string = 'en';
-  private selectedSortBy: string = 'publishedAt';
-  private selectedFrom: string;
-  private selectedTo: string;
+  public selectedCountry: string = 'us';
+  public selectedCategory: string = 'general';
+  public selectedLanguage: string = 'en';
+  public selectedSortBy: string = 'publishedAt';
+  public selectedFrom: string;
+  public selectedTo: string;
 
   countries = [
     { id: 1, value: 'de', name: "Germany" },

@@ -18,12 +18,12 @@ export class FolderPage implements OnInit {
 
   clickEventsubscription: Subscription;
 
-  private folder: string;
+  public folder: string;
   data: any;
   page = 1;
   private country: string = '';
   private category: string = '';
-  private search: string = '';
+  public search: string = '';
   public showInfiniteScroll: boolean = true;
   private language: string;
   private from: string;

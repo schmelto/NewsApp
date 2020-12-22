@@ -17,7 +17,7 @@
         <ion-list *ngIf="selectedIndex === 0">
           <ion-item>
             <ion-label>Country</ion-label>
-            <ion-select [value]="selectedCountry" [interfaceOptions]="customPopoverOptions" interface="popover"
+            <ion-select [value]="selectedCountry" interface="popover"
               (ionChange)="changeCountry($event)">
               <ion-select-option [value]="country.value" *ngFor="let country of countries">{{country.name}}
               </ion-select-option>
@@ -25,7 +25,7 @@
           </ion-item>
           <ion-item>
             <ion-label>Category</ion-label>
-            <ion-select [value]="selectedCategory" [interfaceOptions]="customPopoverOptions" interface="popover"
+            <ion-select [value]="selectedCategory" interface="popover"
               (ionChange)="changeCategory($event)">
               <ion-select-option [value]="category.value" *ngFor="let category of categories">{{category.name}}
               </ion-select-option>
@@ -37,7 +37,7 @@
         <ion-list *ngIf="selectedIndex === 1">
           <ion-item>
             <ion-label>Language</ion-label>
-            <ion-select [value]="selectedLanguage" [interfaceOptions]="customPopoverOptions" interface="popover"
+            <ion-select [value]="selectedLanguage" interface="popover"
               (ionChange)="changeLanguage($event)">
               <ion-select-option [value]="language.value" *ngFor="let language of languages">{{language.name}}
               </ion-select-option>
@@ -55,7 +55,7 @@
           </ion-item>
           <ion-item>
             <ion-label>Sort By</ion-label>
-            <ion-select [value]="selectedSortBy" [interfaceOptions]="customPopoverOptions" interface="popover"
+            <ion-select [value]="selectedSortBy"  interface="popover"
               (ionChange)="changeSortBy($event)">
               <ion-select-option [value]="sort.value" *ngFor="let sort of sortBy">{{sort.name}}
               </ion-select-option>
