@@ -72,7 +72,6 @@ export class FolderPage implements OnInit {
         // initial load of the data
         if (this.page == 1) {
           this.data = data;
-          console.log(data);
         }
         // append next articles to the data array
         else {
