@@ -37,10 +37,18 @@ export class FolderPage implements OnInit {
     private EventlistenerService: EventlistenerService,
     public modalController: ModalController
   ) {
-
     this.clickEventsubscription = this.EventlistenerService.getClickEvent().subscribe(() => {
-      this.ngOnInit();
+      this.update();
     });
+  }
+
+  update() {
+    this.page = 1;
+    this.folder = this.activatedRoute.snapshot.paramMap.get('id');
+    this.checkCountry();
+    this.checkCategory();
+    this.checkSelectionInEverything();
+    this.loadData();
   }
 
   ngOnInit() {
@@ -70,8 +78,11 @@ export class FolderPage implements OnInit {
     if (this.search != '' || this.folder == 'top-headlines') {
       this.newsService.getData(this.folder, this.country, this.category, this.search, this.page, this.language, this.from, this.to, this.sortBy).subscribe(data => {
         // initial load of the data
+        console.log(this.page);
+        console.log(this.clickEventsubscription);
         if (this.page == 1) {
           this.data = data;
+          console.log(data);
         }
         // append next articles to the data array
         else {
@@ -112,6 +123,10 @@ export class FolderPage implements OnInit {
     this.country = '';
     this.category = '';
     this.search = '';
+    this.language = '';
+    this.sortBy = '';
+    this.from = null;
+    this.to = null;
     this.showInfiniteScroll = true;
   }
 
