@@ -110,7 +110,8 @@ export class FolderPage implements OnInit {
 
   doRefresh(event) {
     this.resetParameters();
-    this.loadData();
+    this.update();
+    // this.loadData();
 
     setTimeout(() => {
       event.target.complete();
