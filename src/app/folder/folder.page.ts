@@ -78,11 +78,8 @@ export class FolderPage implements OnInit {
     if (this.search != '' || this.folder == 'top-headlines') {
       this.newsService.getData(this.folder, this.country, this.category, this.search, this.page, this.language, this.from, this.to, this.sortBy).subscribe(data => {
         // initial load of the data
-        console.log(this.page);
-        console.log(this.clickEventsubscription);
         if (this.page == 1) {
           this.data = data;
-          console.log(data);
         }
         // append next articles to the data array
         else {
