@@ -107,7 +107,6 @@ export class AppComponent implements OnInit {
 
   changeCategory(data) {
     this.selectedCategory = data.detail.value;
-    console.log(data.detail.value);
     this.EventlistenerService.sendClickEvent();
   }
   getCategory() {
