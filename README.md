@@ -9,7 +9,7 @@ The app get the news by the NewsAPI from https://newsapi.org/ and showig them in
 ## How to start
 
 To run the application local on your computer clone the repository to your local mashine and run following commands:
-(Prerequisite: [Node.js](https://nodejs.org/en/)
+(Prerequisite: [Node.js](https://nodejs.org/en/))
 ```
 npm install
 ```
