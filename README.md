@@ -2,6 +2,10 @@
 
 This is a news app buildet during the [#100daysofcode](https://github.com/schmelto/100-days-of-code/) challange of [@schmelto](https://github.com/schmelto).
 
+![GitHub repo size](https://img.shields.io/github/repo-size/schmelto/NewsApp?style=for-the-badge)
+![Lines of code](https://img.shields.io/tokei/lines/github/schmelto/NewsApp?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues/schmelto/NewsApp?style=for-the-badge)
+
 ## Architecture
 
 The app get the news by the NewsAPI from https://newsapi.org/ and showig them in an Ionic Angular Web Application or as a compiled android app.
