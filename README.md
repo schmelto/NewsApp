@@ -3,8 +3,10 @@
 This is a news app buildet during the [#100daysofcode](https://github.com/schmelto/100-days-of-code/) challange of [@schmelto](https://github.com/schmelto).
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/schmelto/NewsApp?style=for-the-badge)
-![Lines of code](https://img.shields.io/tokei/lines/github/schmelto/NewsApp?style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues/schmelto/NewsApp?style=for-the-badge)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/schmelto/NewsApp?style=for-the-badge)
+![GitHub Repo stars](https://img.shields.io/github/stars/schmelto/NewsApp?style=for-the-badge)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/schmelto/NewsApp?style=for-the-badge)
 
 ## Architecture
 
@@ -29,3 +31,6 @@ To run on your andorid device get the APK-file and install it on your phone. You
 ## More Information
 
 to deploy to IOS or Android: https://ionicframework.com/docs/angular/your-first-app/6-deploying-mobile
+
+
+![GitHub](https://img.shields.io/github/license/schmelto/NewsApp?style=for-the-badge)
