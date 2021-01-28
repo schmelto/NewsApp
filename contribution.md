@@ -1,10 +1,5 @@
 ## Contributing
 
-[fork]: https://github.com/schmelto/NewsApp/fork
-[pr]: https://github.com/schmelto/NewsApp/compare
-[style]: STYLEGUIDE
-[code-of-conduct]: CODE_OF_CONDUCT.md
-
 Hi there! We're thrilled that you'd like to contribute to this project. Your help is essential for keeping it great.
 
 Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms.
@@ -12,11 +7,11 @@ Please note that this project is released with a Contributor Code of Conduct. By
 ## Submitting a pull request
 
 0. [Fork][fork] and clone the repository
-0. Create a new branch: `git checkout -b my-branch-name`
-0. Make your change and remember to add tests
-0. Build the project locally and run local tests
-0. Push to your fork and [submit a pull request][pr]
-0. Pat your self on the back and wait for your pull request to be reviewed and merged.
+1. Create a new branch: `git checkout -b my-branch-name`
+2. Make your change and remember to add tests
+3. Build the project locally and run local tests
+4. Push to your fork and [submit a pull request][pr]
+5. Pat your self on the back and wait for your pull request to be reviewed and merged.
 
 Here are a few things you can do that will increase the likelihood of your pull request being accepted:
 
@@ -30,3 +25,8 @@ Here are a few things you can do that will increase the likelihood of your pull 
 - [How to Contribute to Open Source](https://opensource.guide/how-to-contribute/)
 - [Using Pull Requests](https://help.github.com/articles/about-pull-requests/)
 - [GitHub Help](https://help.github.com)
+
+[fork]: https://github.com/schmelto/NewsApp/fork
+[pr]: https://github.com/schmelto/NewsApp/compare
+[style]: STYLEGUIDE
+[code-of-conduct]: CODE_OF_CONDUCT.md
