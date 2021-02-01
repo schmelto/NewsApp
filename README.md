@@ -8,6 +8,8 @@ This is a news app build during the [#100daysofcode](https://github.com/schmelto
 ![GitHub Repo stars](https://img.shields.io/github/stars/schmelto/NewsApp?style=for-the-badge)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/schmelto/NewsApp?style=for-the-badge)
 
+<img src="./assets/select_country.gif" alt="drawing" width="300"/>
+
 ## Architecture
 
 The app get the news by the NewsAPI from https://newsapi.org/ and showig them in an Ionic Angular Web Application or as a compiled android app.
