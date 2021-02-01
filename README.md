@@ -20,6 +20,12 @@ To run the application on your computer clone the repository to your local machi
 npm install
 ```
 
+To install Ionic run:
+```
+npm install -g @ionic/cli
+```
+
+To start the app go into te `app`-folder and run:
 ```
 ionic serve
 ```
