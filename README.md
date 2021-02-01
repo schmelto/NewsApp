@@ -1,6 +1,6 @@
 # NewsApp
 
-This is a news app buildet during the [#100daysofcode](https://github.com/schmelto/100-days-of-code/) challange of [@schmelto](https://github.com/schmelto).
+This is a news app build during the [#100daysofcode](https://github.com/schmelto/100-days-of-code/) challange of [@schmelto](https://github.com/schmelto).
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/schmelto/NewsApp?style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues/schmelto/NewsApp?style=for-the-badge)
