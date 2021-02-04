@@ -20,11 +20,11 @@ The app get the news by the NewsAPI from https://newsapi.org/ and showig them in
 
 * [Node.js](https://nodejs.org/en/)
 * [Ionic](https://ionicframework.com/)
+* PowerShell `Set-ExecutionPolicy RemoteSigned`
 
 ### Installation
 
 To run the application on your computer clone the repository to your local machine and run following commands:
-(Prerequisite: [Node.js](https://nodejs.org/en/) and [Ionic](https://ionicframework.com/) and in PowerShell `Set-ExecutionPolicy RemoteSigned`)
 ```
 npm install
 ```
