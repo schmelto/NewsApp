@@ -16,6 +16,13 @@ The app get the news by the NewsAPI from https://newsapi.org/ and showig them in
 
 ## How to start
 
+### Prerequisite
+
+* [Node.js](https://nodejs.org/en/)
+* [Ionic](https://ionicframework.com/)
+
+### Installation
+
 To run the application on your computer clone the repository to your local machine and run following commands:
 (Prerequisite: [Node.js](https://nodejs.org/en/) and [Ionic](https://ionicframework.com/) and in PowerShell `Set-ExecutionPolicy RemoteSigned`)
 ```
