@@ -24,7 +24,7 @@ The app get the news by the NewsAPI from https://newsapi.org/ and showig them in
 ### Installation
 
 To run the application on your computer clone the repository to your local machine and run following commands:
-
+(Prerequisite: [Node.js](https://nodejs.org/en/) and [Ionic](https://ionicframework.com/) and in PowerShell `Set-ExecutionPolicy RemoteSigned`)
 ```
 npm install
 ```
@@ -34,7 +34,9 @@ To install Ionic run:
 npm install -g @ionic/cli
 ```
 
-To start the app go into the `app`-folder and run:
+Create your account at https://newsapi.org/ and change the `api-key` in [environments](./app/src/environments/)
+
+To start the app go into te `app`-folder and run:
 ```
 ionic serve
 ```
