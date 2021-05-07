@@ -18,26 +18,29 @@ The app get the news by the NewsAPI from https://newsapi.org/ and showig them in
 
 ### Prerequisite
 
-* [Node.js](https://nodejs.org/en/)
-* [Ionic](https://ionicframework.com/)
-* PowerShell `Set-ExecutionPolicy RemoteSigned`
+- [Node.js](https://nodejs.org/en/)
+- [Ionic](https://ionicframework.com/)
+- PowerShell `Set-ExecutionPolicy RemoteSigned`
 
 ### Installation
 
 To run the application on your computer clone the repository to your local machine and run following commands:
-```
+
+```bash
 npm install
 ```
 
 To install Ionic run:
-```
+
+```bash
 npm install -g @ionic/cli
 ```
 
 Create your account at https://newsapi.org/ and change the `api-key` in [environments](./app/src/environments/)
 
 To start the app go into te `app`-folder and run:
-```
+
+```bash
 ionic serve
 ```
 
@@ -48,6 +51,5 @@ To run on your andorid device get the APK-file and install it on your phone. You
 ## More Information
 
 to deploy to IOS or Android: https://ionicframework.com/docs/angular/your-first-app/6-deploying-mobile
-
 
 ![GitHub](https://img.shields.io/github/license/schmelto/NewsApp?style=for-the-badge)
